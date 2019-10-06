@@ -1,0 +1,11 @@
+project 'iosSample.xcodeproj'
+platform :ios, '10.0'
+
+target 'iosSample' do
+  use_frameworks!
+
+  pod 'MaterialComponents'
+  pod 'SnapKit', '~> 5.0.1'
+  pod 'kommon', :path => '../kommon'
+
+end

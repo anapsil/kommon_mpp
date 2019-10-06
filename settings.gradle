@@ -1,0 +1,2 @@
+include ':app', ':kommon'
+rootProject.name='Kommon Multiplatform'
