@@ -51,4 +51,17 @@ class ValidationsTest {
     fun given_equal_digits_when_validate_returns_true() {
         assertTrue("1111111111111" validate EQUAL_DIGITS)
     }
+
+    @Test
+    fun given_valid_cpf_returns_true() {
+        assertTrue("52998224725".validateCpf())
+    }
+
+    @Test
+    fun given_invalid_cpf_returns_false() {
+        assertFalse("52998224721".validateCpf())
+        assertFalse("11111111111".validateCpf())
+        assertFalse("5299822472".validateCpf())
+        assertFalse("12345678900".validateCpf())
+    }
 }
