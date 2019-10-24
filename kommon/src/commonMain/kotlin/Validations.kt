@@ -24,6 +24,7 @@ internal fun String.isDigit() = this.toLongOrNull() != null
 
 internal fun String.isEqualDigits() : Boolean {
     val firstDigit = first()
+    if (length == 1) return false
     if (this.isDigit().not()) return false
 
     forEach {
@@ -35,7 +36,6 @@ internal fun String.isEqualDigits() : Boolean {
 
 internal fun String.validateCpf(): Boolean {
     if (isEqualDigits().not() || length != 11) return false
-
     return false
 }
 

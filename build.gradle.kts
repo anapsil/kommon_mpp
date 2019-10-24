@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath(BuildPlugins.AGP)
+        classpath(BuildPlugins.AGP_ALPHA)
         classpath(BuildPlugins.KGP)
         classpath(BuildPlugins.KOTLINX_SERIALIZATION)
     }

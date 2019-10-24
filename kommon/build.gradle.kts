@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-
 plugins {
     kotlin(BuildPlugins.KOTLIN_MULTIPLATFORM)
     id(BuildPlugins.KOTLIN_NATIVE_COCOAPODS)
@@ -22,17 +20,29 @@ kotlin {
 
     jvm("android")
 
-    sourceSets["commonMain"].dependencies {
-        implementation(Libraries.KOTLIN_STD_LIB_COMMON)
-    }
-
-    sourceSets["commonTest"].dependencies {
-        implementation(TestLibraries.KOTLIN_TEST_COMMON)
-        implementation(TestLibraries.KOTLIN_TEST_ANNOTATIONS_COMMON)
-    }
-
-    sourceSets["androidMain"].dependencies {
-        implementation(Libraries.KOTLIN_STD_LIB)
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation(Libraries.KOTLIN_STD_LIB_COMMON)
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation(TestLibraries.KOTLIN_TEST_COMMON)
+                implementation(TestLibraries.KOTLIN_TEST_ANNOTATIONS_COMMON)
+            }
+        }
+        getByName("androidMain"){
+            dependencies {
+                implementation(Libraries.KOTLIN_STD_LIB)
+            }
+        }
+        getByName("androidTest") {
+            dependencies {
+                implementation(TestLibraries.KOTLIN_TEST_COMMON)
+                implementation(TestLibraries.KOTLIN_TEST_JUNIT)
+            }
+        }
     }
 
     cocoapods {

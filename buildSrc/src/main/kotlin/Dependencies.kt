@@ -4,9 +4,11 @@ object BuildPlugins {
 
     object Versions {
         const val AGP_VERSION = "3.5.1"
+        const val AGP_VERSION_ALPHA = "4.0.0-alpha01"
     }
 
     const val AGP = "com.android.tools.build:gradle:${Versions.AGP_VERSION}"
+    const val AGP_ALPHA = "com.android.tools.build:gradle:${Versions.AGP_VERSION_ALPHA}"
     const val KGP = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
     const val KOTLINX_SERIALIZATION = "org.jetbrains.kotlin:kotlin-serialization:$KOTLIN_VERSION"
     const val ANDROID_APPLICATION = "com.android.application"
@@ -58,6 +60,7 @@ object TestLibraries {
 
     const val JUNIT = "junit:junit:${Versions.JUNIT_VERSION}"
     const val KOTLIN_TEST_COMMON = "org.jetbrains.kotlin:kotlin-test-common:$KOTLIN_VERSION"
+    const val KOTLIN_TEST_JUNIT = "org.jetbrains.kotlin:kotlin-test-junit:$KOTLIN_VERSION"
     const val KOTLIN_TEST_ANNOTATIONS_COMMON = "org.jetbrains.kotlin:kotlin-test-annotations-common:$KOTLIN_VERSION"
     const val TRUTH = "com.google.truth:truth:${Versions.TRUTH_VERSION}"
 
